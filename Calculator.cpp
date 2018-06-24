@@ -17,10 +17,15 @@ int main(int argc, char * argv[])
 		cout << "One or both operands are not numbers.";
 		return 2;
 	}
+	if (strlen(argv[2]) != 1)
+	{
+		cout << "The operator is not a single character.";
+		return 3;
+	}
 	if (argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*' && argv[2][0] != '/')
 	{
 		cout << "The operator is not '+' or '-' or '/' or '*'.";
-		return 3;
+		return 4;
 	}
 	switch (argv[2][0])
 	{
@@ -38,7 +43,7 @@ int main(int argc, char * argv[])
 		break;
 	default:
 		cout << "Error.";
-		return 4;
+		return 5;
 	}
 	return 0;
 }
